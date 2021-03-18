@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Menyimpan", "packages\Menyimpan\Menyimpan\Menyimpan.csproj", "{4384959E-3C89-4E62-9A81-48E038DA0175}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Menyimpan.Tests", "packages\Menyimpan\Menyimpan.Tests\Menyimpan.Tests.csproj", "{9A76F12C-914F-4402-9291-FC16321FDF0B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4384959E-3C89-4E62-9A81-48E038DA0175}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4384959E-3C89-4E62-9A81-48E038DA0175}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4384959E-3C89-4E62-9A81-48E038DA0175}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4384959E-3C89-4E62-9A81-48E038DA0175}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9A76F12C-914F-4402-9291-FC16321FDF0B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9A76F12C-914F-4402-9291-FC16321FDF0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9A76F12C-914F-4402-9291-FC16321FDF0B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9A76F12C-914F-4402-9291-FC16321FDF0B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

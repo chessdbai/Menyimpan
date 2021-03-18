@@ -1,0 +1,25 @@
+{
+  "name": "@chessdb.biz/menyimpan-importer",
+  "version": "1.0.0",
+  "license": "MIT",
+  "scripts": {
+    "postinstall": "pwsh ../../scripts/NetRestore.ps1",
+    "build": "pwsh ../../scripts/NetBuild.ps1",
+    "pack": "pwsh ./scripts/Pack.ps1",
+    "publish-docker": "pwsh ./scripts/Publish.ps1",
+    "publish-nuget": "pwsh ../../scripts/NetPublishNuget.ps1",
+    "clean": "./scripts/net-clean.sh",
+    "test": "./scripts/net-test.sh local",
+    "test-docker": "./scripts/net-test.sh docker",
+    "server": "./scripts/net-run.sh",
+    "release": "npm run build && npm run pack && npm run test"
+  },
+  "dotnet": {
+    "testProjects": [
+      "Menyimpan.Tests"
+    ],
+    "projects": [
+      "Menyimpan"
+    ]
+  }
+}

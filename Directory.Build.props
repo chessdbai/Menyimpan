@@ -1,0 +1,61 @@
+<Project>
+
+    <PropertyGroup>
+        <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
+        <TargetFramework>net5.0</TargetFramework>
+        <IsTestProject>$(MSBuildProjectName.EndsWith("Tests"))</IsTestProject>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    </PropertyGroup>
+
+    <PropertyGroup Condition="!$(IsTestProject)">
+        <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+        <TestProjectName>$(MSBuildProjectName).Tests</TestProjectName>
+        <IsPackable>True</IsPackable>
+        <GenerateAssemblyInfo>true</GenerateAssemblyInfo>
+        <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
+        <GenerateAssemblyCopyrightAttribute>false</GenerateAssemblyCopyrightAttribute>
+        <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+    </PropertyGroup>
+
+    <ItemGroup Condition="!$(IsTestProject)">
+        <AssemblyAttribute Include="System.Runtime.CompilerServices.InternalsVisibleToAttribute">
+            <_Parameter1>Maki.Tests</_Parameter1>
+        </AssemblyAttribute>
+        <AssemblyAttribute Include="System.Reflection.AssemblyCompanyAttribute">
+            <_Parameter1>johndavis.dev</_Parameter1>
+        </AssemblyAttribute>
+        <AssemblyAttribute Include="System.Reflection.AssemblyProductAttribute">
+            <_Parameter1>95horatio</_Parameter1>
+        </AssemblyAttribute>
+
+        <AdditionalFiles Include="$(MSBuildThisFileDirectory)\stylecop.json" Link="stylecop.json">
+            <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+            <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+        </AdditionalFiles>
+
+        <PackageReference Include="StyleCop.Analyzers" PrivateAssets="All" />
+    </ItemGroup>
+
+    <PropertyGroup Condition="$(IsTestProject)">
+        <NoWarn>CS1591</NoWarn>
+        <IsPackable>false</IsPackable>
+        <OutputType>Library</OutputType>
+    </PropertyGroup>
+
+    <ItemGroup Condition="$(IsTestProject)">
+        <PackageReference Include="Microsoft.NET.Test.Sdk" />
+        <PackageReference Include="xunit" />
+        <PackageReference Include="xunit.runner.visualstudio">
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+            <PrivateAssets>all</PrivateAssets>
+        </PackageReference>
+        <PackageReference Include="coverlet.collector">
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+            <PrivateAssets>all</PrivateAssets>
+        </PackageReference>
+        <PackageReference Include="JUnitTestLogger" />
+    </ItemGroup>
+
+</Project>

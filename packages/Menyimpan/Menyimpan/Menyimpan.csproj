@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="AWSSDK.S3" />
+        <PackageReference Include="ChessBot.Logic" />
+        <PackageReference Include="ChessDB.Aletheia.Pgn" />
+        <PackageReference Include="ChessDB.Eunomia" />
+        <PackageReference Include="ChessDB.Rudz.Chess" />
+        <PackageReference Include="Hashids.net" />
+        <PackageReference Include="Microsoft.Extensions.Logging.Console" />
+        <PackageReference Include="System.CommandLine.Dragonfruit" />
+    </ItemGroup>
+</Project>
