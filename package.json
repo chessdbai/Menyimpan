@@ -9,7 +9,8 @@
     "build": "lerna run build",
     "clean": "lerna run clean",
     "test": "lerna run test",
-    "release": "lerna bootstrap && npm run build && npm run test"
+    "release": "lerna bootstrap && npm run build && npm run test",
+    "synth": "lerna run synth"
   },
   "private": true,
   "devDependencies": {

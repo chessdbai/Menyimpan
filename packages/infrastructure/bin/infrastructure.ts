@@ -62,7 +62,7 @@ class Menyimpan extends cdk.Stage {
         cloudAssemblyArtifact,
         installCommand: './scripts/login.sh && npm i',
         buildCommand: 'npm run release',
-        synthCommand: 'cd packages/infrastructure && npm run synth',
+        synthCommand: 'npm run synth',
         rolePolicyStatements: [
           new iam.PolicyStatement({
             actions: [
