@@ -58,20 +58,4 @@ $buildProjects | ForEach-Object {
       -Message "Stopping the build since a the build subprocess for project $projectName failed." `
       -ErrorAction Stop
   }
-
-  $homeDir = Get-Variable HOME -valueOnly
-  $reportToolPath = Join-Path -Path $homeDir -ChildPath '.dotnet/tools/reportgenerator'
-  $reportProcess = Start-Process `
-    -FilePath $reportToolPath `
-    -WorkingDirectory $subprojectPath `
-    -ArgumentList "-reports:$coverageFilePath","-targetdir:$projectReportsDir\coverage-html","-reporttypes:HTML" `
-    -PassThru
-  Wait-Process -InputObject $reportProcess
-  $testExitCode = $reportProcess.ExitCode
-  If ($testExitCode -ne 0)
-  {
-    Write-Error `
-      -Message "Stopping the build since a the build subprocess for project $projectName failed." `
-      -ErrorAction Stop
-  }
 }

@@ -9,8 +9,7 @@
     "publish-docker": "pwsh ./scripts/Publish.ps1",
     "publish-nuget": "pwsh ../../scripts/NetPublishNuget.ps1",
     "clean": "./scripts/net-clean.sh",
-    "test": "./scripts/net-test.sh local",
-    "test-docker": "./scripts/net-test.sh docker",
+    "test": "pwsh ../../scripts/NetTest.ps1",
     "server": "./scripts/net-run.sh",
     "release": "npm run build && npm run pack && npm run test"
   },
