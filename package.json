@@ -6,7 +6,7 @@
   "author": "John Davis",
   "license": "MIT",
   "scripts": {
-    "bootstrap": "lerna bootstrap",
+    "bootstrap": "./scripts/login.sh && lerna bootstrap",
     "build": "lerna run build",
     "clean": "lerna run clean",
     "test": "lerna run test",
