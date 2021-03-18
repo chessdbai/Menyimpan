@@ -6,8 +6,9 @@
   },
   "scripts": {
     "build": "tsc",
-    "watch": "tsc -w",
-    "cdk": "cdk"
+    "bootstrap": "./scripts/bootstrap.sh",
+    "deploy": "./scripts/deploy.sh",
+    "synth": "cdk synth"
   },
   "devDependencies": {
     "@aws-cdk/assert": "1.94.1",
