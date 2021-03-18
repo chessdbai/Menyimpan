@@ -56,8 +56,7 @@ class Menyimpan extends cdk.Stage {
       synthAction: pipelines.SimpleSynthAction.standardNpmSynth({
         sourceArtifact,
         cloudAssemblyArtifact,
-        installCommand: 'npm i -g lerna && npm i',
-        buildCommand: 'npm run build',
+        buildCommand: 'npm run release',
         rolePolicyStatements: [
           new iam.PolicyStatement({
             actions: [
