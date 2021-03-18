@@ -3,6 +3,7 @@ import 'source-map-support/register';
 import * as cdk from '@aws-cdk/core';
 import * as pipelines from '@aws-cdk/pipelines';
 import * as iam from '@aws-cdk/aws-iam';
+import * as codebuild from '@aws-cdk/aws-codebuild';
 import * as codepipeline from '@aws-cdk/aws-codepipeline';
 import * as codepipeline_actions from '@aws-cdk/aws-codepipeline-actions';
 import { MenyimpanStack } from '../lib/menyimpan-stack';
@@ -54,6 +55,9 @@ class Menyimpan extends cdk.Stage {
       }),
 
       synthAction: pipelines.SimpleSynthAction.standardNpmSynth({
+        environment: {
+          buildImage: codebuild.LinuxBuildImage.STANDARD_5_0
+        },
         sourceArtifact,
         cloudAssemblyArtifact,
         installCommand: './scripts/login.sh && npm i',
