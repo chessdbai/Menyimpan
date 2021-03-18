@@ -41,7 +41,7 @@ class Menyimpan extends cdk.Stage {
     const cloudAssemblyArtifact = new codepipeline.Artifact();
 
     const pipeline = new pipelines.CdkPipeline(this, 'Pipeline', {
-      pipelineName: 'Janus',
+      pipelineName: 'Menyimpan',
       cloudAssemblyArtifact,
       sourceAction: new codepipeline_actions.GitHubSourceAction({
         actionName: 'GitHub',
@@ -49,7 +49,7 @@ class Menyimpan extends cdk.Stage {
         oauthToken: cdk.SecretValue.secretsManager('corp/Deploy/GitHub'),
         // Replace these with your actual GitHub project name
         owner: 'chessdbai',
-        repo: 'Janus',
+        repo: 'Menyimpan',
         branch: 'master', // default: 'master'
       }),
 
